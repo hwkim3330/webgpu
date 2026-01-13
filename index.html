@@ -349,6 +349,10 @@
         </footer>
     </div>
 
-    <script type="module" src="app.js"></script>
+    <!-- Load dependencies in order -->
+    <script src="korean-dataset.js"></script>
+    <script src="tokenizer.js"></script>
+    <script src="model.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>
