@@ -1,0 +1,51 @@
+{
+  "model_name": "LFM Korean Lite",
+  "version": "1.0.0",
+  "architecture": "transformer",
+  "languages": ["ko", "en"],
+  "vocab_size": 32000,
+  "hidden_size": 768,
+  "num_layers": 8,
+  "num_attention_heads": 12,
+  "max_position_embeddings": 8192,
+  "quantization": "int8",
+  "format": "webgpu",
+  "size_mb": 50,
+  "weights": {
+    "embedding": {
+      "shape": [32000, 768],
+      "dtype": "float16",
+      "quantized": true,
+      "compression": "gzip"
+    },
+    "attention": {
+      "layers": 8,
+      "heads": 12,
+      "dim": 64
+    },
+    "feed_forward": {
+      "intermediate_size": 2048,
+      "activation": "gelu"
+    },
+    "output": {
+      "shape": [768, 32000],
+      "dtype": "float16"
+    }
+  },
+  "tokenizer": {
+    "type": "bpe",
+    "vocab_size": 32000,
+    "special_tokens": {
+      "pad": 0,
+      "bos": 1,
+      "eos": 2,
+      "unk": 3
+    }
+  },
+  "metadata": {
+    "trained_on": "Korean-English corpus",
+    "training_tokens": "10B",
+    "license": "MIT",
+    "author": "LFM Korean Lite Team"
+  }
+}
